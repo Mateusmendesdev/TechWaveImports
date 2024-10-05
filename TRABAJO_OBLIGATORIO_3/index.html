@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechWaveImports</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-brand,
+        .nav-link {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Estilos personalizados para os botões do carrossel */
+        .custom-carousel-control {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fundo preto semi-transparente */
+            border-radius: 50%;
+            /* Botões arredondados */
+            width: 50px;
+            /* Largura do botão */
+            height: 50px;
+            /* Altura do botão */
+        }
+
+        .custom-carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Escurece ao passar o mouse */
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: white;
+            /* Cor dos ícones */
+            border-radius: 50%;
+            /* Ícones arredondados */
+            padding: 10px;
+            /* Espaçamento interno */
+        }
+
+        /* Ajustar a visibilidade dos ícones para melhor legibilidade */
+        .carousel-control-prev-icon::after,
+        .carousel-control-next-icon::after {
+            content: '';
+            display: block;
+            height: 20px;
+            /* Ajustar conforme necessário */
+            width: 20px;
+            /* Ajustar conforme necessário */
+        }
+
+        /* Estilos personalizados para os cards de notícias */
+        .custom-card {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fundo preto semi-transparente */
+            color: white;
+            /* Texto branco */
+            border: none;
+            /* Remover bordas */
+        }
+
+        .custom-card .card-title,
+        .custom-card .card-text {
+            color: white;
+            /* Texto branco para título e conteúdo */
+        }
+
+        /* Ajustar a cor da data */
+        .custom-card .card-text small {
+            color: rgba(255, 255, 255, 0.7);
+            /* Levemente transparente para a data */
+        }
+    </style>
+    <link rel="stylesheet" href="">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-laptop"></i> TechWave Imports
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/viwes/galeria.html">Galería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/viwes/presupuesto.html">Presupuesto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/viwes/contacto.htmls">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Link para Bootstrap Icons e Google Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Carousel de Imagens -->
+    <div id="carouselExample" class="carousel slide mt-5 pt-3" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/banner1.jpg" class="d-block w-100" alt="Promoção de Eletrônicos" width="600"
+                    height="500">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Com a queda nos preços, mais consumidores estão optando por importar eletrônicos.</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/banner2.jpg" class="d-block w-100" alt="Promoção de Eletrônicos" width="600"
+                    height="500">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>NOVEDADES !!!</h5>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/banner3.jpg" class="d-block w-100" alt="Promoção de Eletrônicos" width="600"
+                    height="500">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>A empresa ABC lançou um novo smartphone com câmeras de última geração.</h5>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+    <section class="container mt-5 pt-5">
+        <h2 class="text-center">Últimas Notícias</h2>
+        <div id="noticiasCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="noticias-container">
+                <!-- As notícias serão carregadas aqui dinamicamente -->
+            </div>
+            <!-- Controles para navegar pelo carrossel -->
+            <!-- Controles para navegar pelo carrossel -->
+            <button class="carousel-control-prev custom-carousel-control" type="button"
+                data-bs-target="#noticiasCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next custom-carousel-control" type="button"
+                data-bs-target="#noticiasCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Seção de Produtos em Destaque -->
+    <!-- Seção de Galeria -->
+    <section class="container mt-5 pt-5">
+        <div class="row mt-4">
+            <!-- Produto 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="images/produto1.jpg" class="card-img-top" alt="TV 4K" width="300" height="200">
+                    <div class="card-body">
+                        <h5 class="card-title">TV 4K</h5>
+                        <p class="card-text">Resolução impressionante e cores vibrantes.</p>
+                        <p class="card-text"><strong>€499,99</strong></p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detalhesProduto1">Ver
+                            Detalhes</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Produto 1 -->
+            <div class="modal fade" id="detalhesProduto1" tabindex="-1" aria-labelledby="detalhesProduto1Label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="detalhesProduto1Label">TV 4K - Detalhes</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Esta TV 4K oferece uma resolução de 3840 x 2160 pixels, com suporte para HDR10,
+                                oferecendo uma experiência visual imersiva.</p>
+                            <ul>
+                                <li>Tamanho da tela: 55 polegadas</li>
+                                <li>Resolução: 4K Ultra HD</li>
+                                <li>Smart TV: Sim</li>
+                                <li>Conexões: HDMI, USB</li>
+                                <li>Preço: €499,99</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="images/produto2.jpg" class="card-img-top" alt="Smartphone" width="300" height="200">
+                    <div class="card-body">
+                        <h5 class="card-title">Smartphone</h5>
+                        <p class="card-text">Desempenho rápido e câmeras excepcionais.</p>
+                        <p class="card-text"><strong>€299,99</strong></p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detalhesProduto2">Ver
+                            Detalhes</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Produto 2 -->
+            <div class="modal fade" id="detalhesProduto2" tabindex="-1" aria-labelledby="detalhesProduto2Label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="detalhesProduto2Label">Smartphone - Detalhes</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>O smartphone vem com processador de última geração, 128GB de armazenamento e câmera de
+                                48MP para fotos impressionantes.</p>
+                            <ul>
+                                <li>Processador: Octa-core</li>
+                                <li>Memória RAM: 6GB</li>
+                                <li>Armazenamento: 128GB</li>
+                                <li>Câmera: 48MP + 12MP</li>
+                                <li>Preço: €299,99</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="images/produto3.jpg" class="card-img-top" alt="Laptop" width="300" height="200">
+                    <div class="card-body">
+                        <h5 class="card-title">Laptop</h5>
+                        <p class="card-text">Poder de processamento para trabalho e lazer.</p>
+                        <p class="card-text"><strong>€799,99</strong></p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#detalhesProduto3">Ver
+                            Detalhes</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Produto 3 -->
+            <div class="modal fade" id="detalhesProduto3" tabindex="-1" aria-labelledby="detalhesProduto3Label"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="detalhesProduto3Label">Laptop - Detalhes</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Este laptop é ideal para multitarefas, com processador Intel i7 e 16GB de RAM. Perfeito
+                                para profissionais e gamers.</p>
+                            <ul>
+                                <li>Processador: Intel i7</li>
+                                <li>Memória RAM: 16GB</li>
+                                <li>Armazenamento: SSD 512GB</li>
+                                <li>Placa de Vídeo: NVIDIA GTX 1650</li>
+                                <li>Preço: €799,99</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="container mt-5 pt-5">
+            <div class="row mt-4">
+                <!-- Produto 4 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/produto4.jpg" class="card-img-top" alt="Câmera DSLR" width="300" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">Câmera DSLR</h5>
+                            <p class="card-text">Alta qualidade de imagem para profissionais.</p>
+                            <p class="card-text"><strong>€999,99</strong></p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#detalhesProduto4">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Produto 4 -->
+                <div class="modal fade" id="detalhesProduto4" tabindex="-1" aria-labelledby="detalhesProduto4Label"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="detalhesProduto4Label">Câmera DSLR - Detalhes</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Esta câmera DSLR é perfeita para fotógrafos profissionais que procuram alta qualidade
+                                    de imagem.</p>
+                                <ul>
+                                    <li>Resolução: 24.2MP</li>
+                                    <li>Vídeo: Full HD 1080p</li>
+                                    <li>Objetiva: 18-55mm</li>
+                                    <li>Conexões: HDMI, USB</li>
+                                    <li>Preço: €999,99</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/produto5.jpg" class="card-img-top" alt="Headphones" width="300" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">Headphones</h5>
+                            <p class="card-text">Som de alta definição e conforto absoluto.</p>
+                            <p class="card-text"><strong>€149,99</strong></p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#detalhesProduto5">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Produto 5 -->
+                <div class="modal fade" id="detalhesProduto5" tabindex="-1" aria-labelledby="detalhesProduto5Label"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="detalhesProduto5Label">Headphones - Detalhes</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Estes headphones oferecem som de alta definição e isolamento acústico para uma
+                                    experiência auditiva imersiva.</p>
+                                <ul>
+                                    <li>Conectividade: Bluetooth 5.0</li>
+                                    <li>Cancelamento de ruído ativo</li>
+                                    <li>Autonomia de bateria: 30 horas</li>
+                                    <li>Compatível com assistentes de voz</li>
+                                    <li>Preço: €149,99</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="images/produto6.jpg" class="card-img-top" alt="Smartwatch" width="300" height="200">
+                        <div class="card-body">
+                            <h5 class="card-title">Smartwatch</h5>
+                            <p class="card-text">Monitoramento de saúde e atividades diárias.</p>
+                            <p class="card-text"><strong>€199,99</strong></p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#detalhesProduto6">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Produto 6 -->
+                <div class="modal fade" id="detalhesProduto6" tabindex="-1" aria-labelledby="detalhesProduto6Label"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="detalhesProduto6Label">Smartwatch - Detalhes</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Este smartwatch é ideal para quem deseja monitorar sua saúde e atividades físicas,
+                                    além de integrar-se ao seu smartphone.</p>
+                                <ul>
+                                    <li>Monitoramento de batimentos cardíacos</li>
+                                    <li>GPS integrado</li>
+                                    <li>Resistência à água (5 ATM)</li>
+                                    <li>Compatível com Android e iOS</li>
+                                    <li>Preço: €199,99</li>
+                                </ul>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- GSAP para animações -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white pt-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Sección Inicio -->
+                <div class="col-md-3">
+                    <h5>Inicio</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="#" class="text-white">Novidades</a></li>
+                        <li><a href="#" class="text-white">Descargas</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sección Sobre Nosotros -->
+                <div class="col-md-3">
+                    <h5>Sobre Nosotros</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="contacto.html" class="text-white">Información</a></li>
+                        <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                        <li><a href="#" class="text-white">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sección Soporte -->
+                <div class="col-md-3">
+                    <h5>Soporte</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="contacto.html" class="text-white">FAQ</a></li>
+                        <li><a href="contacto.html" class="text-white">Teléfonos</a></li>
+                        <li><a href="contacto.html" class="text-white">Chat</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sección Información -->
+                <div class="col-md-3">
+                    <h5>Información</h5>
+                    <p>En <strong>TechWave Imports</strong>, ofrecemos una amplia gama de productos importados, desde
+                        electrónicos hasta accesorios. Nuestro objetivo es brindar calidad y precio competitivo para
+                        satisfacer todas tus necesidades.</p>
+                    <p>¡Contáctanos para más información sobre nuestros productos y servicios!</p>
+                </div>
+            </div> <!-- Fecha a div.row -->
+
+            <!-- Redes Sociales -->
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <a href="#" class="text-white me-2">
+                        <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <a href="#" class="text-white me-2">
+                        <i class="bi bi-twitter" style="font-size: 1.5rem;"></i>
+                    </a>
+                    <a href="#" class="text-white me-2">
+                        <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Logo -->
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <i class="bi bi-laptop" style="font-size: 2rem;"></i>
+                    <!-- Ícone de computador (pode ser alterado para uma logo real) -->
+                </div>
+            </div>
+        </div> <!-- Fecha a div.container -->
+    </footer> <!-- Fecha o footer -->
+
+    <script>
+        // Função para carregar notícias via AJAX
+        function carregarNoticias() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'noticias.json', true); // Solicitação do arquivo JSON
+            xhr.onload = function () {
+                if (this.status == 200) {
+                    var noticias = JSON.parse(this.responseText); // Converte o JSON em objeto JavaScript
+                    var output = '';
+
+                    // Itera sobre as notícias e cria os slides do carrossel
+                    noticias.forEach(function (noticia, index) {
+                        output += `
+<div class="carousel-item ${index === 0 ? 'active' : ''}">
+    <div class="d-flex justify-content-center">
+        <div class="card w-75 custom-card"> <!-- Adicionando a classe custom-card -->
+            <div class="card-body">
+                <h5 class="card-title">${noticia.titulo}</h5>
+                <p class="card-text"><small class="text-muted">${noticia.data}</small></p>
+                <p class="card-text">${noticia.conteudo}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                        `;
+                    });
+
+                    // Insere o conteúdo gerado no container de notícias
+                    document.getElementById('noticias-container').innerHTML = output;
+                }
+            };
+            xhr.onerror = function () {
+                console.error("Erro ao carregar o arquivo de notícias.");
+            };
+            xhr.send();
+        }
+
+        // Chama a função ao carregar a página
+        document.addEventListener('DOMContentLoaded', carregarNoticias);
+    </script>
+
+
+
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+</body>
+
+</html>

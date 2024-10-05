@@ -1,0 +1,202 @@
+/* Estilos generais */
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+/* Navbar Dinâmica */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #333;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    list-style: none;
+}
+
+.nav-links li {
+    text-transform: uppercase;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Menu responsivo */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li a {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animação do menu */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Estilos dos Produtos */
+.product-carousel {
+    display: flex;
+    justify-content: center;
+}
+
+.product-carousel a {
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+.product-carousel a:hover {
+    transform: scale(1.1);
+}
+
+.product-carousel img {
+    width: 150px;
+    height: auto;
+}
+
+
+
+/* Animar elementos na página usando GSAP */
+h2, p, blockquote {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.gs-reveal {
+    opacity: 0;
+}
+
+.product-carousel img {
+    transition: transform 0.3s ease;
+}
+
+.product-carousel img:hover {
+    transform: scale(1.1);
+}
+
+/* CSS para los cards del produtos */
+.product-card {
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Efeito de zoom al passar el raton  */
+}
+
+.card {
+    height: 100%; /* Garante que todos los cards tengan la mesma altura */
+}
+
+/* Garante que los títulos y preços sejam alinhados */
+.card-title {
+    font-size: 1.25rem; /* Ajuste conforme necessário */
+}
+.card-text {
+    margin-bottom: 1rem; /* Espaçamento entre as descriciones y los precio */
+}
+
+/* Estilo de los cards en el carrossel */
+.carousel-item .card {
+    margin: 0 auto;
+}
+
+/* Centraliza los comentários y ajusta el layout */
+blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+blockquote-footer {
+    font-size: 1rem;
+    font-style: normal;
+    color: #666;
+}

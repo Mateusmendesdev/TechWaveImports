@@ -1,0 +1,47 @@
+[
+    {
+        "titulo": "Nueva tecnología revoluciona el mercado",
+        "data": "2024-10-01",
+        "conteudo": "La nueva tecnología XYZ está cambiando la forma en que las empresas manejan los datos."
+    },
+    {
+        "titulo": "Lanzamiento de un smartphone de gama alta",
+        "data": "2024-09-28",
+        "conteudo": "La empresa ABC lanzó un nuevo smartphone con cámaras de última generación."
+    },
+    {
+        "titulo": "Electrónicos más accesibles en Europa",
+        "data": "2024-09-25",
+        "conteudo": "Con la caída de los precios, más consumidores están optando por importar electrónicos."
+    },
+    {
+        "titulo": "Cámaras de alta calidad dominan el mercado",
+        "data": "2024-09-15",
+        "conteudo": "Nuevos modelos de cámaras DSLR están ofreciendo características avanzadas a precios accesibles."
+    },
+    {
+        "titulo": "Dispositivos portátiles ganan terreno entre los consumidores",
+        "data": "2024-09-10",
+        "conteudo": "Los smartwatches y rastreadores de actividad física están cada vez más presentes en el día a día de los consumidores."
+    },
+    {
+        "titulo": "Tendencias en portátiles para 2024",
+        "data": "2024-09-05",
+        "conteudo": "Los portátiles ultradelgados con mayor potencia se están convirtiendo en la principal opción de profesionales y gamers."
+    },
+    {
+        "titulo": "El futuro de los dispositivos de audio",
+        "data": "2024-09-01",
+        "conteudo": "Los auriculares con cancelación activa de ruido están entre los productos más vendidos en 2024."
+    },
+    {
+        "titulo": "Tecnologías sostenibles cobran protagonismo",
+        "data": "2024-08-28",
+        "conteudo": "Las empresas de tecnología están invirtiendo cada vez más en prácticas sostenibles y productos ecológicos."
+    },
+    {
+        "titulo": "Inteligencia artificial en productos electrónicos",
+        "data": "2024-08-20",
+        "conteudo": "Los dispositivos electrónicos con IA integrada se están popularizando y facilitando la vida de los consumidores."
+    }
+]
